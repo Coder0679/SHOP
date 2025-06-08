@@ -182,7 +182,7 @@
   <div id="imgModal" onclick="closeModal()" style="display: none;">
     <img id="modalImg" src="file:///C:/Users/mantu/OneDrive/Desktop/test4.html">
   </div>
-  <script>
+  <script type="module">
 let products = [];
 let sales = [];
 let editIndex = -1;
@@ -461,6 +461,28 @@ function closeModal() {
   document.getElementById('modalImg').src = '';
 }
 
+ // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDLHYMQA5Lg1bsdurWvaer5Tudcjtk6mVw",
+    authDomain: "shop-management-fea08.firebaseapp.com",
+    projectId: "shop-management-fea08",
+    storageBucket: "shop-management-fea08.firebasestorage.app",
+    messagingSenderId: "391726853552",
+    appId: "1:391726853552:web:aac4bbc7f097d02aebba75",
+    measurementId: "G-F9T48QNJY1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+    
 // --- INITIALIZE ---
 loadData();
 showProducts();
